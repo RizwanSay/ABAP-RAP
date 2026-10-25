@@ -1,2 +1,5 @@
 #Ignore .xml files
 *.xml
+
+#Ignore .baseinfo
+*.baseinfo
