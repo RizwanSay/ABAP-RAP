@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Purchase Order', typeNamePlural: 'Purchase Orders',
+                  title: { label: 'Purchase Order Details',
+                           type: #STANDARD,
+                           value: 'PurchaseOrdNo' } }
+annotate entity ZRS_C_PO
+    with 
+{
+    @UI.facet: [{ 
+                    id: 'PurchaseOrd',
+                    type: #IDENTIFICATION_REFERENCE,
+                    label: 'Purchase Order Details',
+                    purpose: #STANDARD,
+                    position: 10
+               }]
+    @UI.lineItem: [{ position: 1 }]
+    @UI.identification: [{ position: 1 }]
+    VendorUuid;
+    @UI.lineItem: [{ position: 2 }]
+    @UI.identification: [{ position: 2 }]
+    PoUuid;
+    @UI.lineItem: [{ position: 3 }]
+    @UI.identification: [{ position: 3 }]
+    PurchaseOrdNo;
+    @UI.lineItem: [{ position: 4 }]
+    @UI.identification: [{ position: 4 }]
+    CompanyCode;
+    @UI.lineItem: [{ position: 5 }]
+    @UI.identification: [{ position: 5 }]
+    DocCat;
+    @UI.lineItem: [{ position: 6 }]
+    @UI.identification: [{ position: 6 }]
+    DocType;
+    /* Associations */
+//    _Vendor;
+    
+}   

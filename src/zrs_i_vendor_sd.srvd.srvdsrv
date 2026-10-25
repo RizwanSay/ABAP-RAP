@@ -1,0 +1,6 @@
+@EndUserText.label: 'Vendor Service Definition'
+define service ZRS_I_VENDOR_SD {
+  expose ZRS_C_VENDOR;
+  expose ZRS_I_VH_COUNTRY_DOMAIN;
+  expose ZRS_C_PO;
+}

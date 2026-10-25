@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Vendor', typeNamePlural: 'Vendors',
+                     title:{ type: #STANDARD, value: 'VendorName' },
+                     description: { value: 'VendorNo' } } }
+     
+annotate entity ZRS_C_VENDOR
+    with 
+{
+    @UI.facet: [{ 
+                    id : 'Vendor',
+                    label : 'Vendor Details',
+                    type : #IDENTIFICATION_REFERENCE,
+                    purpose: #STANDARD,
+                    position: 10
+                    
+               },
+               { 
+                    id: 'PurchaseOrd',
+                    label : 'Purchase Order Details',
+                    type : #LINEITEM_REFERENCE,
+                    purpose: #STANDARD,
+                    position: 20,
+                    targetElement: '_PurchaseOrd'
+               }]
+    
+    @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 10 }]
+    VendorUuid;
+    @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [{ position: 20 }]
+    @EndUserText.label: 'Vendor Number'
+    VendorNo;
+    @UI.lineItem: [{ position: 30 }]
+    @UI.identification: [{ position: 30 }]
+    @EndUserText.label: 'Vendor Name'
+    VendorName;
+    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [{ position: 40 }]
+    @EndUserText.label: 'Country'
+    
+    @Consumption.valueHelpDefinition:
+    [{ 
+        entity: { name: 'ZRS_I_VH_COUNTRY_DOMAIN',
+                  element: 'Value' }                             
+    
+    }]
+    Country;
+    @UI.lineItem: [{ position: 50 }]
+    @UI.identification: [{ position: 50 }]
+    @EndUserText.label: 'City'
+    City;
+    
+}
